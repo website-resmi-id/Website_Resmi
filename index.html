@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surat Jaminan Pengiriman — SICEPAT x R2 NUSANTARA | No. Resi 001776551297</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── UPGRADED COLOR PALETTE (FORMAL & OFFICIAL) ── */
+    :root {
+      --navy:      #0f172a; /* Midnight Blue yang lebih dalam dan tegas */
+      --navy2:     #1e293b; 
+      --gold:      #b49347; /* Gold metalik kelembagaan */
+      --gold2:     #d4af37; 
+      --cream:     #f8f9fa; /* Putih tulang keabu-abuan layaknya kertas dokumen legal */
+      --red:       #991b1b; /* Burgundy red untuk urgensi, tidak menyakitkan mata */
+      --green:     #166534;
+      --border:    #cbd5e1;
+      --border-g:  #b4934755;
+      --text:      #1e293b;
+      --qris-blue: #003da5;
+      --qris-red:  #e2001a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #94a3b8; /* Latar belakang luar dokumen abu-abu profesional */
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP ALERT BANNER ── */
+    .alert-bar {
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      animation: pulse-bg 3s infinite alternate;
+      border-bottom: 2px solid #7f1d1d;
+    }
+    @keyframes pulse-bg {
+      0% { background: var(--red); }
+      100% { background: #7f1d1d; }
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      max-width: 860px;
+      margin: 30px auto 60px;
+      padding: 0 16px;
+    }
+
+    /* ── DOCUMENT CARD ── */
+    .doc-card {
+      background: #fff;
+      border-top: 6px solid var(--navy);
+      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.2), inset 0 0 0 1px var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .doc-card::before {
+      content: "DOKUMEN SAH TERVERIFIKASI";
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%) rotate(-35deg);
+      font-size: 6rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      color: rgba(180, 147, 71, 0.04);
+      pointer-events: none;
+      white-space: nowrap;
+      letter-spacing: .2em;
+      z-index: 0;
+    }
+
+    /* ── HEADER (UPGRADED DENGAN LOGO EKSPEDISI) ── */
+    .doc-header {
+      background: #fff;
+      padding: 30px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--navy);
+      position: relative;
+      z-index: 1;
+    }
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .emblem {
+      width: 60px; height: 60px; flex-shrink: 0;
+    }
+    .logo-divider {
+      width: 1px; height: 40px; background: var(--border);
+    }
+    .sicepat-logo {
+      font-family: 'Arial Black', sans-serif;
+      font-size: 1.5rem;
+      color: #e3000f;
+      letter-spacing: -1px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .sicepat-logo span { color: var(--navy); }
+    .sicepat-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; color: #64748b; letter-spacing: 0.1em;
+      margin-top: 4px; display: block;
+    }
+    
+    .header-meta { text-align: right; flex-shrink: 0; }
+    .meta-barcode {
+      display: inline-block;
+      font-family: 'Libre Barcode 39', monospace; /* Fallback to standard if not loaded */
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+      letter-spacing: 2px;
+    }
+    .meta-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .meta-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 700;
+      display: block;
+      margin-top: 3px;
+    }
+    .meta-value.resi { font-size: 1.15rem; color: var(--red); letter-spacing: .05em; }
+
+    /* ── TITLE SECTION ── */
+    .title-section {
+      background: var(--cream);
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .doc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--navy);
+      font-weight: 900;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .doc-subtitle {
+      font-size: 0.85rem;
+      color: #475569;
+      letter-spacing: .08em;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    /* ── URGENCY BADGE ── */
+    .urgency-row {
+      background: #fef2f2;
+      border-bottom: 1px solid #fca5a5;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 1; position: relative;
+    }
+    .badge-urgent {
+      background: var(--red);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .urgency-text { font-size: 0.85rem; color: #7f1d1d; font-weight: 600; }
+    .status-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--red); flex-shrink: 0;
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(153, 27, 27, 0.7); }
+      50%      { opacity: .7; box-shadow: 0 0 0 6px rgba(153, 27, 27, 0); }
+    }
+
+    /* ── BODY ── */
+    .doc-body { padding: 35px 40px; position: relative; z-index: 1; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .section-label::before { content: "▼"; font-size: 0.6rem; color: var(--gold); margin-right: 8px; vertical-align: middle; }
+
+    /* ── INFO TABLE (Reconstructed) ── */
+    .intro-para {
+      font-size: 0.95rem; line-height: 1.8; color: #334155; margin-bottom: 25px; text-align: justify;
+    }
+    .info-grid {
+      width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 0.9rem;
+    }
+    .info-grid tr { border-bottom: 1px solid var(--border); }
+    .info-grid td { padding: 12px; vertical-align: top; line-height: 1.5; }
+    .info-grid td:first-child { color: #64748b; width: 35%; font-weight: 600; padding-left: 0; }
+    .info-grid td:nth-child(2) { color: #94a3b8; width: 5%; text-align: center; }
+    .info-grid td:last-child { color: var(--navy); font-weight: 700; padding-right: 0; }
+    .info-grid tr.highlight td { background: #f8fafc; }
+    .info-grid tr.highlight td:first-child { border-left: 4px solid var(--gold); padding-left: 12px; }
+
+    /* ── GOODS TABLE (Reconstructed) ── */
+    .goods-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 0.88rem;
+    }
+    .goods-table thead tr { background: var(--navy); color: #fff; }
+    .goods-table thead th {
+      padding: 12px 14px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+      letter-spacing: .08em; text-transform: uppercase; text-align: left; font-weight: 600;
+    }
+    .goods-table tbody tr { border-bottom: 1px solid var(--border); }
+    .goods-table tbody tr:nth-child(even) { background: #f8fafc; }
+    .goods-table tbody td { padding: 12px 14px; color: #1e293b; }
+    .goods-table tfoot tr { background: var(--cream); border-top: 2px solid var(--navy); }
+    .goods-table tfoot td { padding: 12px 14px; font-weight: 700; color: var(--navy); }
+
+    /* ── CLAUSE BOX & NOTICE BOX (Reconstructed) ── */
+    .clause-box {
+      background: #fdfaf3; border: 1px solid #e2e8f0; border-left: 4px solid var(--gold);
+      padding: 20px 24px; margin-bottom: 30px;
+    }
+    .clause-box p { font-size: 0.88rem; line-height: 1.7; color: #334155; margin-bottom: 10px; text-align: justify; }
+    .clause-box ol { padding-left: 20px; font-size: 0.88rem; line-height: 1.7; color: #334155; }
+    
+    .notice-box {
+      background: #fef2f2; border: 1px solid #f87171; border-left: 5px solid var(--red);
+      padding: 20px 24px; margin-bottom: 30px; position: relative;
+    }
+    .notice-box::before {
+      content: "PERHATIAN - INSTRUKSI WAJIB";
+      display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: .1em; color: var(--red); margin-bottom: 12px;
+    }
+    .notice-box p { font-size: 0.9rem; line-height: 1.7; color: #7f1d1d; margin-bottom: 8px; text-align: justify; }
+    .notice-box strong { color: var(--red); font-weight: 700; }
+
+    /* ── TIMELINE (Reconstructed) ── */
+    .timeline { margin-bottom: 30px; padding-left: 28px; border-left: 2px solid var(--border); }
+    .tl-item { position: relative; padding: 0 0 24px 24px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -31px; top: 2px; width: 14px; height: 14px; border-radius: 50%;
+      background: var(--border); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--border);
+    }
+    .tl-dot.done { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
+    .tl-dot.active { background: var(--red); box-shadow: 0 0 0 2px var(--red); animation: pulse-dot 1.5s infinite; }
+    .tl-step { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #64748b; margin-bottom: 4px; display: block; }
+    .tl-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .tl-desc { font-size: 0.85rem; color: #475569; line-height: 1.5; }
+
+    /* ── SECTION 06 — QRIS PAYMENT ── */
+    /* Price breakdown */
+    .price-wrap { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 24px; }
+    .price-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .price-table thead tr { background: var(--navy); color: #fff; }
+    .price-table thead th {
+      padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; 
+      letter-spacing: .08em; text-align: left; font-weight: 600;
+    }
+    .price-table thead th:last-child { text-align: right; }
+    .price-table tbody tr { border-bottom: 1px solid var(--border); }
+    .price-table tbody td { padding: 12px 16px; color: #1e293b; }
+    .price-table tbody td:last-child { text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--navy); }
+    .price-table tfoot tr { background: #f8fafc; border-top: 2px solid var(--border); }
+    .price-table tfoot td { padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #475569; }
+    .price-table tfoot td:last-child { text-align: right; font-weight: 700; color: var(--red); font-size: 1rem; }
+
+    /* Jaminan highlight */
+    .jaminan-box {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e293b 100%);
+      border: 1px solid var(--navy);
+      border-left: 6px solid var(--gold);
+      padding: 24px 30px; margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      border-radius: 4px;
+    }
+    .jaminan-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #94a3b8;
+      letter-spacing: .15em; text-transform: uppercase; margin-bottom: 8px; display: block;
+    }
+    .jaminan-title {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; font-weight: 700; margin-bottom: 5px;
+    }
+    .jaminan-desc { font-size: 0.85rem; color: #cbd5e1; font-style: italic; }
+    .jaminan-amount-wrap { text-align: right; flex-shrink: 0; }
+    .jaminan-pct { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--gold); letter-spacing: .1em; margin-bottom: 6px; display: block; }
+    .jaminan-amount { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: #fff; line-height: 1; }
+    .jaminan-amount .currency { font-size: 1.2rem; color: #cbd5e1; font-weight: 700; margin-right: 4px; }
+
+    /* Countdown */
+    .countdown-wrapper {
+      background: #f8fafc; border: 1px solid var(--border); padding: 20px;
+      margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; gap: 12px;
+      border-radius: 4px;
+    }
+    .countdown-header {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--red);
+      text-transform: uppercase; letter-spacing: .15em; font-weight: 700;
+    }
+    .countdown-row { display: flex; gap: 10px; align-items: center; }
+    .cd-unit {
+      background: #fff; border: 1px solid var(--border); padding: 12px 16px; 
+      text-align: center; min-width: 70px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .cd-num { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 700; color: var(--navy); display: block; line-height: 1; }
+    .cd-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #64748b; text-transform: uppercase; letter-spacing: .1em; margin-top: 6px; display: block; }
+    .cd-sep { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 700; color: var(--border); padding-bottom: 16px; }
+
+    /* QRIS CARD (Retained & Polished) */
+    .qris-card {
+      border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 30px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .qris-card-header {
+      background: var(--cream); padding: 16px 24px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .qris-logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .qris-logo-text { font-family: 'Arial Black', sans-serif; font-size: 1.4rem; color: var(--navy); line-height: 1; letter-spacing: -0.5px; }
+    .qris-logo-text span { color: var(--qris-red); }
+    .qris-tagline { font-size: 0.65rem; color: #64748b; font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+    .qris-badge-bi { font-size: 0.7rem; color: #fff; background: var(--qris-blue); padding: 4px 10px; border-radius: 20px; font-weight: 600; }
+    
+    .qris-card-body {
+      display: flex; flex-wrap: wrap; background: #fff;
+    }
+    .qris-code-col {
+      width: 40%; padding: 30px; display: flex; flex-direction: column; align-items: center;
+      border-right: 1px solid var(--border); background: #f8fafc;
+    }
+    .qris-frame { background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 16px; }
+    .qris-scan-label { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .qris-nominal-box { background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 6px; text-align: center; width: 100%; }
+    .qris-nominal-lbl { font-size: 0.7rem; color: #cbd5e1; margin-bottom: 4px; }
+    .qris-nominal-val { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 700; color: var(--gold); }
+
+    .qris-detail-col { width: 60%; padding: 30px; }
+    .qris-detail-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .qris-row { display: flex; margin-bottom: 10px; font-size: 0.88rem; line-height: 1.4; }
+    .qris-key { width: 140px; color: #64748b; flex-shrink: 0; }
+    .qris-sep { width: 15px; color: #94a3b8; }
+    .qris-val { color: var(--navy); font-weight: 600; }
+    .qris-val.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+    .qris-val.big { font-size: 1.1rem; color: var(--red); font-weight: 700; }
+    
+    .scan-steps { margin-top: 25px; background: #f8fafc; padding: 16px; border-radius: 6px; border: 1px dashed var(--border); }
+    .scan-steps-title { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .scan-step { display: flex; gap: 10px; margin-bottom: 8px; font-size: 0.8rem; color: #475569; align-items: flex-start; }
+    .scan-num { background: var(--navy); color: #fff; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    .apps-strip { background: #f1f5f9; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .apps-label { font-size: 0.75rem; color: #64748b; font-weight: 600; margin-right: 10px; }
+    .app-pill { background: #fff; border: 1px solid #cbd5e1; font-size: 0.65rem; padding: 4px 10px; border-radius: 12px; color: #334155; font-weight: 600; }
+
+    .qris-card-footer { background: var(--cream); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .pay-status-row { display: flex; align-items: center; gap: 10px; }
+    .status-indicator { width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; }
+    .status-indicator.paid { background: var(--green); }
+    .status-text { font-size: 0.85rem; font-weight: 700; color: #d97706; }
+    .qris-footer-note { font-size: 0.7rem; color: #94a3b8; max-width: 60%; text-align: right; }
+
+    /* Confirm Button */
+    .confirm-wrap { text-align: center; margin-bottom: 30px; }
+    .confirm-btn {
+      background: var(--navy); color: #fff; border: none; padding: 16px 32px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 700; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    }
+    .confirm-btn:hover { background: #1e293b; transform: translateY(-2px); }
+    .confirm-btn:disabled { background: var(--green); cursor: default; transform: none; box-shadow: none; }
+    .confirm-note { display: block; font-size: 0.75rem; color: #64748b; margin-top: 10px; font-style: italic; }
+
+    .pay-success {
+      background: #f0fdf4; border: 1px solid #86efac; border-left: 4px solid var(--green);
+      padding: 20px 24px; margin-bottom: 30px; display: none; text-align: left;
+    }
+    .pay-success.show { display: block; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .pay-success-title { font-size: 1.05rem; font-weight: 700; color: var(--green); margin-bottom: 8px; }
+    .pay-success-desc { font-size: 0.9rem; color: #166534; line-height: 1.6; }
+
+    /* ── SIGNATURE (Reconstructed & Refined) ── */
+    .sig-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 20px; }
+    .sig-block { text-align: center; padding: 20px; border: 1px solid var(--border); background: #f8fafc; border-radius: 4px; }
+    .sig-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 15px; }
+    .sig-area { height: 90px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .stamp-svg { width: 100px; height: 100px; opacity: 0.9; }
+    .sig-name { margin-top: 15px; font-weight: 700; font-size: 0.95rem; color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
+    .sig-role { font-size: 0.8rem; color: #475569; margin-top: 4px; }
+
+    /* ── FOOTER (Reconstructed) ── */
+    .doc-footer {
+      background: var(--navy); color: #cbd5e1; padding: 24px 40px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      font-size: 0.75rem; line-height: 1.6;
+    }
+    .qr-area { flex-shrink: 0; background: #fff; padding: 8px; border-radius: 4px; }
+    .qr-inner { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--navy); font-weight: 700; text-align: center; line-height: 1.2; border: 1px solid #e2e8f0; padding: 4px; }
+    .footer-left { flex: 1; }
+    .footer-right { text-align: right; }
+    .footer-right span { font-weight: 700; color: var(--gold); font-size: 0.85rem; display: block; margin: 4px 0; }
+
+    .print-btn-wrap { text-align: center; margin-top: 20px; }
+    .print-btn {
+      background: #fff; border: 1px solid var(--border); color: var(--navy); padding: 12px 24px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 700; cursor: pointer;
+      border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.2s;
+    }
+    .print-btn:hover { background: var(--cream); color: var(--navy); border-color: var(--navy); }
+
+    /* Print Media Query */
+    @media print {
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { margin: 0; max-width: 100%; padding: 0; }
+      .doc-card { box-shadow: none; border-top: 4px solid var(--navy); }
+      .print-btn-wrap { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="alert-bar">
+    Pemberitahuan Sistem: Dokumen Ini Memerlukan Tindakan Segera Sebelum Batas Waktu Berakhir
+  </div>
+
+  <div class="page">
+    <div class="doc-card">
+
+      <div class="doc-header">
+        <div class="header-logos">
+          <div>
+            <div class="sicepat-logo">SiCepat<span>EXPRESS</span></div>
+            <span class="sicepat-sub">MITRA PENGIRIMAN RESMI</span>
+          </div>
+          <div class="logo-divider"></div>
+          <svg class="emblem" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="none" stroke="#1e293b" stroke-width="3"/>
+            <path d="M50 12 L84 29 L84 71 L50 88 L16 71 L16 29 Z" fill="#1e293b"/>
+            <text x="50" y="58" font-family="Playfair Display, serif" font-weight="900" font-size="28" fill="#b49347" text-anchor="middle">R2</text>
+            <text x="50" y="72" font-family="JetBrains Mono, monospace" font-size="8" fill="#fff" text-anchor="middle" letter-spacing="2">NUSANTARA</text>
+          </svg>
+        </div>
+        <div class="header-meta">
+          <div class="meta-barcode">||| ||||| |||| || |||</div>
+          <span class="meta-label">Nomor Resi / AWB</span>
+          <span class="meta-value resi">001776551297</span>
+        </div>
+      </div>
+
+      <div class="title-section">
+        <h1 class="doc-title">Surat Jaminan Pengiriman</h1>
+        <div class="doc-subtitle">Nomor Referensi Internal: SJP/R2N/2026/0042-JAM30</div>
+      </div>
+
+      <div class="urgency-row">
+        <div class="status-dot"></div>
+        <span class="badge-urgent">Status: Tertahan</span>
+        <span class="urgency-text">Paket berada di Fasilitas Transit. Menunggu pelunasan jaminan administratif.</span>
+      </div>
+
+      <div class="doc-body">
+
+        <div class="section-label">01 — Identitas Konsumen & Ekspedisi <span>[Data Terekam]</span></div>
+        <p class="intro-para">
+          Dokumen ini diterbitkan secara resmi sebagai tindak lanjut atas kiriman paket melalui layanan logistik <strong>SiCepat Express</strong>. Berdasarkan audit manifest manifes, detail penerima dan status pengiriman tercatat sebagai berikut:
+        </p>
+        <table class="info-grid">
+          <tr>
+            <td>Nama Penerima Tertuju</td><td>:</td><td>Sdr/i. Indo Afriandy</td>
+          </tr>
+          <tr>
+            <td>Alamat Tujuan Akhir</td><td>:</td><td>Kota Mataram, Nusa Tenggara Barat (NTB) 83232</td>
+          </tr>
+          <tr>
+            <td>Nomor Resi Kiriman</td><td>:</td><td>001776551297</td>
+          </tr>
+          <tr class="highlight">
+            <td>Tanggal Dokumen Terbit</td><td>:</td><td id="docdate">Terisi Otomatis</td>
+          </tr>
+        </table>
+
+        <div class="section-label">02 — Rincian Manifes Barang <span>[Inspeksi Kargo]</span></div>
+        <table class="goods-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Deskripsi Komoditas</th>
+              <th>Kuantitas</th>
+              <th>Nilai Estimasi (IDR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Distribusi Tembakau (Rokok Cukai Resmi)</td>
+              <td>60 Slop</td>
+              <td>Rp 4.600.000</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" style="text-align: right;">Total Nilai Valuasi Barang:</td>
+              <td>Rp 4.600.000</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div class="section-label">03 — Klausul Legal & Ketentuan Jaminan <span>[Hukum Perdata]</span></div>
+        <div class="clause-box">
+          <p>Berdasarkan regulasi pengiriman barang bernilai tinggi lintas pulau, pihak penerima wajib memberikan jaminan asuransi/administrasi sementara sebesar persentase yang ditetapkan dari total nilai valuasi barang. Ketentuan jaminan ini berlaku mutlak dengan syarat:</p>
+          <ol>
+            <li>Jaminan bersifat <strong>sementara</strong> dan akan <strong>dikembalikan 100% (Refundable)</strong> secara utuh kepada penerima setelah paket diterima dan status resi tercatat "Delivered".</li>
+            <li>Tanpa adanya penyelesaian jaminan, paket akan tetap ditahan di fasilitas transit demi keamanan aset sesuai Standar Operasional Prosedur (SOP) distribusi R2 Nusantara.</li>
+          </ol>
+        </div>
+
+        <div class="notice-box">
+          <p><strong>⚠ PEMBERITAHUAN WAJIB PENYELESAIAN:</strong> Anda diwajibkan melakukan penyelesaian pembayaran jaminan sebelum batas waktu habis. Kelalaian dalam memenuhi administrasi ini dapat mengakibatkan paket dikembalikan ke pihak pengirim (Retur) tanpa pemberitahuan lebih lanjut.</p>
+        </div>
+
+        <div class="section-label">04 — Jejak Status Kiriman <span>[Lacak Resi]</span></div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot done"></div>
+            <span class="tl-step">Tahap 1 — Selesai</span>
+            <div class="tl-title">Paket Diserahkan ke SiCepat Express</div>
+            <div class="tl-desc">Drop-off oleh R2 Nusantara Divisi Malang, Jawa Timur.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot done"></div>
+            <span class="tl-step">Tahap 2 — Selesai</span>
+            <div class="tl-title">Pemrosesan di Hub Malang</div>
+            <div class="tl-desc">Paket disortir untuk pengiriman jalur udara/darat.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot active"></div>
+            <span class="tl-step">Tahap 3 — Memerlukan Tindakan</span>
+            <div class="tl-title">Tertahan di Fasilitas Transit Administrasi</div>
+            <div class="tl-desc">Menunggu penyelesaian Jaminan Asuransi (30%) dari pihak penerima sebelum dirilis ke Kota Mataram.</div>
+          </div>
+        </div>
+
+        <div class="section-label">05 — Perhitungan Nilai Jaminan <span>[Akuntansi]</span></div>
+        <div class="price-wrap">
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th>Deskripsi Komponen</th>
+                <th>Dasar Pengenaan</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nilai Valuasi Barang Kargo (60 Slop)</td>
+                <td>Dasar Perhitungan</td>
+                <td>Rp 4.600.000</td>
+              </tr>
+              <tr>
+                <td>Persentase Jaminan yang Diperlukan</td>
+                <td>30% dari Valuasi</td>
+                <td>Administratif</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">TOTAL JAMINAN (Dapat Dikembalikan / Refundable)</td>
+                <td>Rp 1.380.000</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="jaminan-box">
+          <div>
+            <span class="jaminan-label">Kewajiban Pembayaran Jaminan Sementara</span>
+            <div class="jaminan-title">Total Yang Harus Dibayarkan</div>
+            <div class="jaminan-desc">Nominal ini akan dikembalikan penuh (100%) setelah serah terima paket.</div>
+          </div>
+          <div class="jaminan-amount-wrap">
+            <span class="jaminan-pct">Deposit Jaminan (30%)</span>
+            <div class="jaminan-amount"><span class="currency">Rp</span>1.380.000</div>
+          </div>
+        </div>
+
+        <div class="countdown-wrapper">
+          <div class="countdown-header">Batas Waktu Penyelesaian Administrasi</div>
+          <div class="countdown-row">
+            <div class="cd-unit"><span class="cd-num" id="cd-h">23</span><span class="cd-lbl">Jam</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span class="cd-num" id="cd-m">59</span><span class="cd-lbl">Menit</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span class="cd-num" id="cd-s">59</span><span class="cd-lbl">Detik</span></div>
+          </div>
+          <div class="countdown-note" id="deadline-str">Menghitung batas waktu...</div>
+        </div>
+
+        <div class="section-label">06 — Gerbang Pembayaran Terpadu <span>[Sistem QRIS]</span></div>
+        <div class="qris-card">
+          <div class="qris-card-header">
+            <div class="qris-logo-wrap">
+              <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="42" height="42" rx="7" fill="#fff" stroke="#cbd5e1"/>
+                <rect x="4"  y="4"  width="14" height="14" rx="2" fill="#003da5"/>
+                <rect x="7"  y="7"  width="8"  height="8"  rx="1" fill="#fff"/>
+                <rect x="9"  y="9"  width="4"  height="4"  rx="0.5" fill="#003da5"/>
+                <rect x="24" y="4"  width="14" height="14" rx="2" fill="#003da5"/>
+                <rect x="27" y="7"  width="8"  height="8"  rx="1" fill="#fff"/>
+                <rect x="29" y="9"  width="4"  height="4"  rx="0.5" fill="#003da5"/>
+                <rect x="4"  y="24" width="14" height="14" rx="2" fill="#003da5"/>
+                <rect x="7"  y="27" width="8"  height="8"  rx="1" fill="#fff"/>
+                <rect x="9"  y="29" width="4"  height="4"  rx="0.5" fill="#003da5"/>
+                <rect x="24" y="24" width="4" height="4" fill="#e2001a"/>
+                <rect x="29" y="24" width="4" height="4" fill="#003da5"/>
+                <rect x="34" y="24" width="4" height="4" fill="#003da5"/>
+                <rect x="24" y="29" width="4" height="4" fill="#003da5"/>
+                <rect x="29" y="29" width="4" height="4" fill="#e2001a"/>
+                <rect x="34" y="29" width="4" height="4" fill="#003da5"/>
+                <rect x="24" y="34" width="4" height="4" fill="#003da5"/>
+                <rect x="29" y="34" width="4" height="4" fill="#003da5"/>
+                <rect x="34" y="34" width="4" height="4" fill="#e2001a"/>
+              </svg>
+              <div>
+                <div class="qris-logo-text">QR<span>IS</span></div>
+                <div class="qris-tagline">Quick Response Code Indonesian Standard</div>
+              </div>
+            </div>
+            <span class="qris-badge-bi">Standar Bank Indonesia</span>
+          </div>
+
+          <div class="qris-card-body">
+            <div class="qris-code-col">
+              <div class="qris-frame">
+                <svg width="180" height="180" viewBox="0 0 190 190" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+                  <rect width="190" height="190" fill="#fff"/>
+                  <rect x="10" y="10" width="52" height="52" fill="#003da5"/>
+                  <rect x="17" y="17" width="38" height="38" fill="#fff"/>
+                  <rect x="24" y="24" width="24" height="24" fill="#003da5"/>
+                  <rect x="128" y="10" width="52" height="52" fill="#003da5"/>
+                  <rect x="135" y="17" width="38" height="38" fill="#fff"/>
+                  <rect x="142" y="24" width="24" height="24" fill="#003da5"/>
+                  <rect x="10" y="128" width="52" height="52" fill="#003da5"/>
+                  <rect x="17" y="135" width="38" height="38" fill="#fff"/>
+                  <rect x="24" y="142" width="24" height="24" fill="#003da5"/>
+                  <rect x="70" y="10" width="7" height="7" fill="#003da5"/>
+                  <rect x="84" y="10" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="10" width="7" height="7" fill="#003da5"/>
+                  <rect x="112" y="10" width="7" height="7" fill="#003da5"/>
+                  <rect x="10" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="10" y="84" width="7" height="7" fill="#003da5"/>
+                  <rect x="10" y="98" width="7" height="7" fill="#003da5"/>
+                  <rect x="10" y="112" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="24" width="7" height="7" fill="#003da5"/>
+                  <rect x="84" y="24" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="24" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="38" width="7" height="7" fill="#003da5"/>
+                  <rect x="112" y="38" width="7" height="7" fill="#003da5"/>
+                  <rect x="84" y="52" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="52" width="7" height="7" fill="#003da5"/>
+                  <rect x="112" y="52" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="84" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="128" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="142" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="156" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="170" y="70" width="7" height="7" fill="#003da5"/>
+                  <rect x="24" y="84" width="7" height="7" fill="#003da5"/>
+                  <rect x="38" y="84" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="84" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="84" width="7" height="7" fill="#003da5"/>
+                  <rect x="128" y="84" width="7" height="7" fill="#003da5"/>
+                  <rect x="156" y="84" width="7" height="7" fill="#003da5"/>
+                  <rect x="52" y="98" width="7" height="7" fill="#003da5"/>
+                  <rect x="84" y="98" width="7" height="7" fill="#003da5"/>
+                  <rect x="112" y="98" width="7" height="7" fill="#003da5"/>
+                  <rect x="142" y="98" width="7" height="7" fill="#003da5"/>
+                  <rect x="170" y="98" width="7" height="7" fill="#003da5"/>
+                  <rect x="24" y="112" width="7" height="7" fill="#003da5"/>
+                  <rect x="52" y="112" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="112" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="112" width="7" height="7" fill="#003da5"/>
+                  <rect x="128" y="112" width="7" height="7" fill="#003da5"/>
+                  <rect x="156" y="112" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="128" width="7" height="7" fill="#003da5"/>
+                  <rect x="84" y="128" width="7" height="7" fill="#003da5"/>
+                  <rect x="112" y="128" width="7" height="7" fill="#003da5"/>
+                  <rect x="142" y="128" width="7" height="7" fill="#003da5"/>
+                  <rect x="170" y="128" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="142" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="142" width="7" height="7" fill="#003da5"/>
+                  <rect x="128" y="142" width="7" height="7" fill="#003da5"/>
+                  <rect x="156" y="142" width="7" height="7" fill="#003da5"/>
+                  <rect x="84" y="156" width="7" height="7" fill="#003da5"/>
+                  <rect x="112" y="156" width="7" height="7" fill="#003da5"/>
+                  <rect x="142" y="156" width="7" height="7" fill="#003da5"/>
+                  <rect x="170" y="156" width="7" height="7" fill="#003da5"/>
+                  <rect x="70" y="170" width="7" height="7" fill="#003da5"/>
+                  <rect x="98" y="170" width="7" height="7" fill="#003da5"/>
+                  <rect x="128" y="170" width="7" height="7" fill="#003da5"/>
+                  <rect x="156" y="170" width="7" height="7" fill="#003da5"/>
+                  <rect x="76" y="76" width="38" height="38" rx="4" fill="#fff"/>
+                  <rect x="79" y="79" width="32" height="32" rx="3" fill="#003da5"/>
+                  <text x="95" y="91" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="9" font-weight="900" fill="#fff">QR</text>
+                  <text x="95" y="103" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="8" font-weight="900" fill="#e2001a">IS</text>
+                </svg>
+              </div>
+              <div class="qris-scan-label">▣ &nbsp;Scan Untuk Bayar</div>
+              <div class="qris-nominal-box">
+                <div class="qris-nominal-lbl">Nominal Jaminan 30%</div>
+                <div class="qris-nominal-val">Rp 1.380.000</div>
+              </div>
+            </div>
+
+            <div class="qris-detail-col">
+              <div class="qris-detail-title">Informasi Transaksi Billing</div>
+              <div class="qris-row"><span class="qris-key">Nama Merchant</span><span class="qris-sep">:</span><span class="qris-val">R2 NUSANTARA</span></div>
+              <div class="qris-row"><span class="qris-key">Kode Merchant</span><span class="qris-sep">:</span><span class="qris-val mono">R2N-DIST-MLG-001</span></div>
+              <div class="qris-row"><span class="qris-key">No. Referensi</span><span class="qris-sep">:</span><span class="qris-val mono">SJP-0042-JAM30</span></div>
+              <div class="qris-row"><span class="qris-key">No. Resi Terkait</span><span class="qris-sep">:</span><span class="qris-val mono">001776551297</span></div>
+              <div class="qris-row"><span class="qris-key">Nominal Bayar</span><span class="qris-sep">:</span><span class="qris-val big">Rp 1.380.000</span></div>
+              <div class="qris-row"><span class="qris-key">Keterangan</span><span class="qris-sep">:</span><span class="qris-val">Deposit Jaminan Sementara</span></div>
+              
+              <div class="scan-steps">
+                <div class="scan-steps-title">📲 &nbsp;Instruksi Pembayaran Mandiri/E-Wallet</div>
+                <div class="scan-step"><span class="scan-num">1</span><span>Buka aplikasi <strong>M-Banking</strong> atau <strong>E-Wallet</strong> Anda (Livin' Mandiri, GoPay, OVO, DANA, dll.)</span></div>
+                <div class="scan-step"><span class="scan-num">2</span><span>Pilih fitur <strong>Scan QR / QRIS</strong>, arahkan kamera ke kode di samping.</span></div>
+                <div class="scan-step"><span class="scan-num">3</span><span>Pastikan nominal yang tertera sesuai dengan tagihan (<strong>Rp 1.380.000</strong>).</span></div>
+                <div class="scan-step"><span class="scan-num">4</span><span>Tekan tombol di bawah untuk melaporkan pelunasan.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="apps-strip">
+            <span class="apps-label">Mendukung:</span>
+            <span class="app-pill">Livin' Mandiri</span>
+            <span class="app-pill">GoPay</span>
+            <span class="app-pill">OVO</span>
+            <span class="app-pill">DANA</span>
+            <span class="app-pill">ShopeePay</span>
+            <span class="app-pill">BCA Mobile</span>
+            <span class="app-pill">BRImo</span>
+            <span class="app-pill">+ Semua QRIS</span>
+          </div>
+
+          <div class="qris-card-footer">
+            <div class="pay-status-row">
+              <div class="status-indicator" id="pay-indicator"></div>
+              <span class="status-text" id="pay-status-text">Menunggu Pembayaran Administrasi</span>
+            </div>
+            <div class="qris-footer-note">
+              QRIS diproses melalui jaringan gerbang pembayaran nasional yang diatur dan diawasi oleh Bank Indonesia.
+            </div>
+          </div>
+        </div>
+
+        <div class="confirm-wrap">
+          <button class="confirm-btn" id="confirmBtn" onclick="handleConfirm()">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#fff" stroke-width="1.5"/><path d="M5 9.5l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Konfirmasi Pembayaran Jaminan Telah Dilakukan
+          </button>
+          <span class="confirm-note">* Sistem otomatis akan memverifikasi mutasi rekening dalam waktu 5-10 menit. Status resi akan diperbarui setelah validasi berhasil.</span>
+        </div>
+
+        <div class="pay-success" id="paySuccess">
+          <div class="pay-success-title">Laporan Pembayaran Diterima</div>
+          <div class="pay-success-desc">
+            Terima kasih. Konfirmasi pembayaran Anda sebesar <strong>Rp 1.380.000</strong> sedang diverifikasi oleh staf keungan <strong>R2 NUSANTARA</strong>. Status manifes resi <strong>001776551297</strong> akan segera beralih menjadi <em>"In Transit"</em>. Dana ini akan dikembalikan penuh (<em>Refundable</em>) ke rekening Anda setelah paket diantarkan.
+          </div>
+        </div>
+
+        <div class="section-label">07 — Pengesahan Otoritas <span>[Dokumen Final]</span></div>
+        <div class="sig-row">
+          <div class="sig-block">
+            <div class="sig-label">Diotorisasi Oleh — Pengirim</div>
+            <div class="sig-area">
+              <svg viewBox="0 0 160 56" width="160" height="56" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,42 C25,10 35,48 50,28 C60,14 68,44 80,32 C90,22 100,46 115,26 C122,16 130,38 150,30" fill="none" stroke="#1e293b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M85,38 C92,26 105,50 120,34" fill="none" stroke="#1e293b" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="sig-name">R2 NUSANTARA DIV. DISTRIBUSI</div>
+            <div class="sig-role">Regional Malang, Jawa Timur</div>
+          </div>
+          
+          <div class="sig-block">
+            <div class="sig-label">Cap Stempel Elektronik</div>
+            <div class="sig-area">
+              <svg class="stamp-svg" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="45" cy="45" r="42" fill="none" stroke="#0f172a" stroke-width="2.5" opacity="0.85"/>
+                <circle cx="45" cy="45" r="36" fill="none" stroke="#0f172a" stroke-width="1" opacity="0.6"/>
+                <defs>
+                  <path id="topArc" d="M 10,45 A 35,35 0 1 1 80,45"/>
+                  <path id="botArc" d="M 80,45 A 35,35 0 1 1 10,45"/>
+                </defs>
+                <text font-family="Source Serif 4,serif" font-weight="600" font-size="7.5" fill="#0f172a" letter-spacing="1.5">
+                  <textPath href="#topArc" startOffset="4%">R2 NUSANTARA • DISTRIBUSI RESMI</textPath>
+                </text>
+                <text font-family="Source Serif 4,serif" font-size="6.5" fill="#0f172a" letter-spacing="1.2">
+                  <textPath href="#botArc" startOffset="8%">MALANG • JAWA TIMUR • INDONESIA</textPath>
+                </text>
+                <text x="45" y="40" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" font-weight="900" fill="#0f172a">R2</text>
+                <text x="45" y="52" text-anchor="middle" font-family="Source Serif 4,serif" font-size="6" fill="#0f172a">NUSANTARA</text>
+                <text x="38" y="62" font-size="6" fill="#0f172a">★</text>
+                <text x="44.5" y="62" font-size="6" fill="#0f172a">★</text>
+                <text x="51" y="62" font-size="6" fill="#0f172a">★</text>
+              </svg>
+            </div>
+            <div class="sig-name" id="stampdate">Terverifikasi Digital</div>
+            <div class="sig-role">Valid Tanpa Tanda Basah</div>
+          </div>
+        </div>
+
+      </div><div class="doc-footer">
+        <div class="qr-area">
+          <div class="qr-inner">▦ QR<br/>SJP<br/>00177<br/>65512</div>
+        </div>
+        <div class="footer-left">
+          <strong>REF: SJP/R2N/2026/0042</strong> | AWL: 001776551297<br/>
+          Penerima: Indo Afriandy (Mataram, NTB) | Mitra: SiCepat Express<br/>
+          Dokumen Administrasi Jaminan Kargo (Refundable 30%). Validitas sistem elektronik mengikat secara hukum.
+        </div>
+        <div class="footer-right">
+          Otoritas Penerbit<br/>
+          <span>R2 NUSANTARA LOGISTICS</span>
+        </div>
+      </div>
+
+    </div><div class="print-btn-wrap">
+      <button class="print-btn" onclick="window.print()">🖨 Cetak / Unduh Berkas PDF</button>
+    </div>
+
+  </div><script>
+    /* ── DATE INJECT ── */
+    const d = new Date();
+    const bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus",
+                   "September","Oktober","November","Desember"];
+    const tgl = `${d.getDate()} ${bulan[d.getMonth()]} ${d.getFullYear()}`;
+    document.getElementById('docdate').textContent  = tgl;
+    document.getElementById('stampdate').textContent = "Tertanggal: " + tgl;
+
+    /* ── DEADLINE (Batas Waktu: +24 Jam dari waktu buka) ── */
+    const deadline = new Date(d.getTime() + 24 * 3600 * 1000);
+    const hh = String(deadline.getHours()).padStart(2,'0');
+    const mm = String(deadline.getMinutes()).padStart(2,'0');
+    const dlStr = `${deadline.getDate()} ${bulan[deadline.getMonth()]} ${deadline.getFullYear()}, ${hh}:${mm} WIB`;
+    document.getElementById('deadline-str').textContent = 'Masa Berlaku Berakhir Pada: ' + dlStr;
+
+    /* ── COUNTDOWN TIMER ── */
+    let sisa = 24 * 3600;
+    function tick() {
+      if (sisa <= 0) {
+        ['cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+        document.getElementById('deadline-str').textContent = "Batas waktu telah habis!";
+        document.getElementById('deadline-str').style.color = "var(--red)";
+        return;
+      }
+      const h = Math.floor(sisa / 3600);
+      const m = Math.floor((sisa % 3600) / 60);
+      const s = sisa % 60;
+      document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+      sisa--;
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    /* ── CONFIRM PAYMENT FUNCTION ── */
+    function handleConfirm() {
+      const btn  = document.getElementById('confirmBtn');
+      const ok   = document.getElementById('paySuccess');
+      const dot  = document.getElementById('pay-indicator');
+      const txt  = document.getElementById('pay-status-text');
+      
+      btn.disabled = true;
+      btn.innerHTML = '✔ &nbsp;Dalam Verifikasi Sistem Staf R2 NUSANTARA';
+      btn.style.background = 'var(--green)';
+      
+      dot.classList.add('paid');
+      txt.textContent = 'Status: Pelunasan Diterima — Memverifikasi Mutasi';
+      txt.style.color = 'var(--green)';
+      
+      ok.classList.add('show');
+      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+</body>
+</html>
