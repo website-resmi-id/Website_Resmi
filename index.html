@@ -1,592 +1,599 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akta Nikah - Template Resmi</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=920, initial-scale=1.0" />
+  <title>Berita Acara Jaminan Legalitas Sementara - Direktorat Jenderal Bea dan Cukai</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Merriweather:wght@700&display=swap');
 
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            background: #f5f5f5;
-            padding: 20px;
-        }
+    :root {
+      --bc-blue: #002B5C;
+      --bc-gold: #D4AF37;
+      --red: #C00000;
+      --red-light: #ffe6e6;
+      --gray-900: #1a1a1a;
+      --gray-800: #333333;
+      --gray-700: #4D4D4D;
+      --gray-300: #cccccc;
+      --white: #ffffff;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 60px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border: 3px solid #d4af37;
-            position: relative;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #333;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.5;
+      background-color: #f4f6f9;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        .logo-left, .logo-right {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f0f0f0;
-            border: 2px solid #999;
-            border-radius: 8px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #666;
-        }
+    /* Watermark Resmi */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://iili.io/fSgaBz7.md.jpg');
+      background-size: 300px;
+      background-repeat: repeat;
+      opacity: 0.04;
+      z-index: -1;
+      pointer-events: none;
+    }
 
-        .header-title {
-            flex: 1;
-            text-align: center;
-            margin: 0 30px;
-        }
+    .document {
+      width: 920px;
+      background: var(--white);
+      position: relative;
+      padding: 40px 50px;
+      font-size: 15px;
+      box-shadow: 0 10px 30px rgba(0, 43, 92, 0.1);
+      border: 1px solid var(--gray-300);
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-        .header-title h1 {
-            font-size: 13px;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
+    /* Toolbar Print / Download */
+    .toolbar-section {
+      width: 920px;
+      background: var(--white);
+      margin-bottom: 16px;
+      padding: 16px 24px;
+      border-radius: 6px;
+      border: 1px solid var(--bc-blue);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .header-title h2 {
-            font-size: 18px;
-            letter-spacing: 3px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #000;
-        }
+    .toolbar-text {
+      font-size: 14px;
+      color: var(--gray-700);
+    }
 
-        .header-title p {
-            font-size: 11px;
-            color: #666;
-            margin: 2px 0;
-        }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bc-blue);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
 
-        .doc-number {
-            background: white;
-            border: 2px solid #d4af37;
-            padding: 10px 20px;
-            text-align: center;
-            margin: 20px 0;
-            font-size: 12px;
-            font-weight: bold;
-        }
+    .download-btn:hover {
+      background: #001a38;
+    }
 
-        .doc-number label {
-            display: block;
-            font-size: 10px;
-            color: #999;
-            margin-bottom: 5px;
-        }
+    /* Kop Surat Resmi (Standar Dinas RI) */
+    .header-resmi {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 4px solid var(--gray-900);
+      margin-bottom: 2px;
+      position: relative;
+    }
 
-        .intro-section {
-            border-left: 5px solid #d4af37;
-            padding-left: 15px;
-            margin: 25px 0;
-            font-size: 12px;
-            line-height: 1.8;
-            color: #333;
-        }
+    .header-resmi::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--gray-900);
+    }
 
-        .data-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 30px 0;
-        }
+    .logo-container {
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-        .data-box {
-            border: 2px solid #d4af37;
-            padding: 20px;
-            background: #fafafa;
-        }
+    .logo-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
 
-        .data-box-title {
-            text-align: center;
-            font-weight: bold;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #d4af37;
-            text-transform: uppercase;
-        }
+    .kop-text {
+      flex: 1;
+      text-align: center;
+      line-height: 1.3;
+      padding: 0 20px;
+    }
 
-        .photo-placeholder {
-            width: 100%;
-            height: 150px;
-            background: #e0e0e0;
-            border: 3px solid #d4af37;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 11px;
-            color: #999;
-            font-weight: bold;
-        }
+    .kop-kementerian {
+      font-size: 18px;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
 
-        .data-item {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 15px;
-            margin-bottom: 12px;
-            font-size: 11px;
-        }
+    .kop-eselon1 {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        .data-label {
-            font-weight: bold;
-            color: #333;
-        }
+    .kop-eselon2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
 
-        .data-value {
-            border-bottom: 1px solid #999;
-            padding-bottom: 2px;
-            min-height: 18px;
-        }
+    .kop-alamat {
+      font-size: 13px;
+      color: var(--gray-800);
+    }
 
-        .section-title {
-            grid-column: 1 / -1;
-            font-weight: bold;
-            font-size: 12px;
-            letter-spacing: 2px;
-            background: #f0f0f0;
-            padding: 8px 10px;
-            margin: 15px 0 10px 0;
-            text-transform: uppercase;
-            color: #333;
-            border-left: 3px solid #d4af37;
-        }
+    /* Judul Dokumen */
+    .title-section {
+      text-align: center;
+      margin: 32px 0 24px;
+    }
 
-        .legal-section {
-            border: 2px solid #d4af37;
-            padding: 20px;
-            margin: 30px 0;
-            background: #fffef5;
-        }
+    .title-main {
+      font-family: 'Merriweather', serif;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: underline;
+      margin-bottom: 4px;
+    }
 
-        .legal-title {
-            text-align: center;
-            font-weight: bold;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            color: #d4af37;
-            text-transform: uppercase;
-        }
+    .title-sub {
+      font-size: 15px;
+      font-weight: bold;
+    }
 
-        .legal-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            font-size: 11px;
-            line-height: 1.7;
-        }
+    /* Data Penerima / Paragraf Pembuka */
+    .opening-paragraph {
+      text-align: justify;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
 
-        .legal-column h3 {
-            font-size: 11px;
-            font-weight: bold;
-            color: #d4af37;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .recipient-table {
+      width: 100%;
+      margin: 16px 0 24px 24px;
+      border: none;
+    }
 
-        .legal-column .item {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;
-        }
+    .recipient-table td {
+      padding: 4px 8px;
+      border: none;
+      vertical-align: top;
+    }
 
-        .legal-column .item label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 3px;
-        }
+    .recipient-table td:first-child {
+      width: 120px;
+      font-weight: bold;
+    }
 
-        .legal-column .item-value {
-            border-bottom: 1px solid #999;
-            padding: 2px 0;
-            min-height: 16px;
-        }
+    .recipient-table td:nth-child(2) {
+      width: 10px;
+    }
 
-        .decree-section {
-            margin: 30px 0;
-            font-size: 11px;
-            line-height: 1.8;
-            color: #333;
-        }
+    /* Tabel Data Standar */
+    .section-title {
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 28px 0 12px;
+      text-transform: uppercase;
+    }
 
-        .decree-bullet {
-            margin: 8px 0 8px 30px;
-        }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
 
-        .decree-bullet::before {
-            content: "♦";
-            margin-right: 10px;
-            color: #d4af37;
-        }
+    table.data-table th, table.data-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--gray-800);
+      vertical-align: middle;
+    }
 
-        .signature-section {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            font-size: 11px;
-        }
+    table.data-table th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+      text-align: left;
+      width: 35%;
+    }
 
-        .signature-box {
-            text-align: center;
-        }
+    .numeric {
+      text-align: right;
+      font-family: monospace;
+      font-size: 15px;
+    }
 
-        .signature-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 10px;
-            text-transform: uppercase;
-            color: #d4af37;
-        }
+    .highlight-row td {
+      background-color: #f4f6f9;
+      font-weight: bold;
+    }
 
-        .signature-line {
-            margin: 60px 0 10px 0;
-            border-bottom: 1px solid #333;
-        }
+    /* Box Catatan & Peringatan */
+    .note-box {
+      border: 1px solid var(--gray-300);
+      padding: 14px 18px;
+      margin: 20px 0;
+      background-color: #fafafa;
+      text-align: justify;
+      font-size: 14px;
+    }
 
-        .signature-name {
-            margin-top: 5px;
-            font-weight: bold;
-            font-size: 11px;
-        }
+    .consequence-box {
+      border: 2px solid var(--red);
+      padding: 16px 20px;
+      margin: 24px 0;
+      background-color: var(--red-light);
+      color: var(--red);
+      text-align: justify;
+    }
 
-        .center-seal {
-            text-align: center;
-            margin: 40px 0;
-        }
+    .consequence-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      text-align: center;
+    }
 
-        .seal-placeholder {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto;
-            background: #e0e0e0;
-            border: 2px solid #d4af37;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: #999;
-            font-weight: bold;
-        }
+    .consequence-box ul {
+      padding-left: 24px;
+      margin-top: 8px;
+    }
 
-        .seal-date {
-            text-align: center;
-            font-size: 11px;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+    /* QR Code Area */
+    .qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px dashed var(--gray-800);
+      padding: 24px;
+      margin: 24px auto;
+      max-width: 400px;
+      background-color: #ffffff;
+    }
 
-        .qr-code {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            width: 80px;
-            height: 80px;
-            background: #f0f0f0;
-            border: 1px solid #999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 9px;
-            color: #999;
-        }
+    .qr-container img {
+      width: 160px;
+      height: 160px;
+      margin: 16px 0;
+      border: 1px solid var(--gray-300);
+    }
 
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .container {
-                box-shadow: none;
-                border: none;
-                padding: 40px;
-                max-width: 100%;
-                margin: 0;
-            }
-            @page {
-                size: A4;
-                margin: 0.5cm;
-            }
-        }
+    .qr-text {
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-        .note {
-            font-size: 9px;
-            color: #999;
-            font-style: italic;
-            margin-top: 8px;
-            display: block;
-        }
-    </style>
+    /* Tanda Tangan */
+    .signature-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 50px;
+    }
+
+    .signature-block {
+      text-align: center;
+      width: 300px;
+    }
+
+    .signature-block p {
+      margin: 2px 0;
+    }
+
+    .signature-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+      min-height: 120px;
+    }
+
+    .combined-sign-stamp {
+      max-width: 240px;
+      height: auto;
+      /* Multiply membuat background gambar screenshot yang putih/keabuan menyatu dengan dokumen */
+      mix-blend-mode: multiply; 
+    }
+
+    .nama-pejabat {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-300);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--gray-700);
+    }
+
+    .iso-badge {
+      height: 30px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .toolbar-section {
+        display: none;
+      }
+      .document {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+      body::before { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header-top">
-            <div class="logo-left">Logo</div>
-            <div class="header-title">
-                <h1>Kementerian Agama Republik Indonesia</h1>
-                <h1>Kantor Urusan Agama (KUA)</h1>
-                <p>Kecamatan: [ISI NAMA KECAMATAN]</p>
-                <p>Kabupaten/Kota: [ISI NAMA KABUPATEN/KOTA]</p>
-                <p>Provinsi: [ISI NAMA PROVINSI]</p>
-            </div>
-            <div class="logo-right">Logo</div>
+
+  <!-- Toolbar Aksi -->
+  <div class="toolbar-section">
+    <div class="toolbar-text">
+      <strong>Mode Tampilan Dokumen Resmi</strong><br>
+      Nomor Referensi: BA-JLS/BC.MKS/001776552523/2026
+    </div>
+    <button class="download-btn" onclick="downloadPDF()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Cetak / Unduh PDF
+    </button>
+  </div>
+
+  <div class="document">
+    
+    <!-- KOP SURAT -->
+    <div class="header-resmi">
+      <div class="logo-container">
+        <img src="https://i.ibb.co/tPxTpvRN/IMG-20251209-070039.jpg" alt="Logo Kemenkeu">
+      </div>
+      <div class="kop-text">
+        <div class="kop-kementerian">KEMENTERIAN KEUANGAN REPUBLIK INDONESIA</div>
+        <div class="kop-eselon1">DIREKTORAT JENDERAL BEA DAN CUKAI</div>
+        <div class="kop-eselon2">KANTOR PENGAWASAN DAN PELAYANAN BEA DAN CUKAI TIPE MADYA PABEAN B MAKASSAR</div>
+        <div class="kop-alamat">
+          Jl. Urip Sumoharjo No. 123, Makassar, Sulawesi Selatan 90242<br>
+          Telepon: (0411) 876543 | Faksimile: (0411) 876544 | Email: kppbc.makassar@djbc.go.id
         </div>
-
-        <!-- Doc Title -->
-        <h2 style="text-align: center; font-size: 28px; letter-spacing: 5px; margin: 30px 0; font-weight: bold;">AKTA NIKAH</h2>
-        <p style="text-align: center; font-size: 12px; color: #666; margin-bottom: 30px;">Marriage Certificate</p>
-
-        <!-- Registration Number -->
-        <div class="doc-number">
-            <label>Nomor Registrasi</label>
-            [ISI NOMOR] / [ISI BULAN] / [ISI TAHUN]
-        </div>
-
-        <!-- Intro Section -->
-        <div class="intro-section">
-            Pada hari ini, [ISI HARI], tanggal [ISI TANGGAL] [ISI BULAN] [ISI TAHUN], berdasarkan ketentuan-ketentuan yang berlaku dalam hukum Islam, oleh penghulu/pejabat pencatat nikah yang berwenang, telah dilaksanakan pernikahan menurut hukum Islam antara:
-        </div>
-
-        <!-- Data Sections -->
-        <div class="data-section">
-            <!-- Groom -->
-            <div class="data-box">
-                <div class="data-box-title">* Pihak Suami *</div>
-                <div class="photo-placeholder">Foto Suami</div>
-                
-                <div class="data-item">
-                    <div class="data-label">Nama Lengkap</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Tempat, Tgl. Lahir</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Agama</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Pekerjaan</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Alamat</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Kewarganegaraan</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">NIK</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Nama Ayah</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Nama Ibu</div>
-                    <div class="data-value"></div>
-                </div>
-            </div>
-
-            <!-- Bride -->
-            <div class="data-box">
-                <div class="data-box-title">* Pihak Istri *</div>
-                <div class="photo-placeholder">Foto Istri</div>
-                
-                <div class="data-item">
-                    <div class="data-label">Nama Lengkap</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Tempat, Tgl. Lahir</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Agama</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Pekerjaan</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Alamat</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Kewarganegaraan</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">NIK</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Nama Ayah</div>
-                    <div class="data-value"></div>
-                </div>
-                <div class="data-item">
-                    <div class="data-label">Nama Ibu</div>
-                    <div class="data-value"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Wali & Saksi Section -->
-        <div class="legal-section">
-            <div class="legal-title">Data Wali & Saksi Nikah</div>
-            <div class="legal-content">
-                <!-- Wali Nikah -->
-                <div>
-                    <h3>Wali Nikah</h3>
-                    <div class="item">
-                        <label>Nama Lengkap</label>
-                        <div class="item-value"></div>
-                    </div>
-                    <div class="item">
-                        <label>Hubungan</label>
-                        <div class="item-value"></div>
-                    </div>
-                    <div class="item">
-                        <label>NIK</label>
-                        <div class="item-value"></div>
-                    </div>
-                </div>
-
-                <!-- Saksi-Saksi -->
-                <div>
-                    <h3>Saksi-Saksi</h3>
-                    <div class="item">
-                        <label>Saksi I</label>
-                        <div class="item-value"></div>
-                    </div>
-                    <div class="item">
-                        <label>NIK</label>
-                        <div class="item-value"></div>
-                    </div>
-                    <div class="item">
-                        <label>Saksi II</label>
-                        <div class="item-value"></div>
-                    </div>
-                    <div class="item">
-                        <label>NIK</label>
-                        <div class="item-value"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Legal Decree -->
-        <div class="decree-section">
-            <p style="margin-bottom: 15px;">
-                <strong>⚜ Pernikahan ini dilaksanakan dan dicatat berdasarkan:</strong>
-            </p>
-            <div class="decree-bullet">Undang-Undang Nomor 1 Tahun 1974 tentang Perkawinan sebagaimana telah diubah dengan Undang-Undang Nomor 16 Tahun 2019;</div>
-            <div class="decree-bullet">Peraturan Pemerintah Nomor 9 Tahun 1975 tentang Pelaksanaan Undang-Undang Nomor 1 Tahun 1974;</div>
-            <div class="decree-bullet">Peraturan Menteri Agama Nomor 30 Tahun 2024 tentang Pencatatan Pernikahan;</div>
-            <div class="decree-bullet">Peraturan perundang-undangan lainnya yang berlaku.</div>
-        </div>
-
-        <p style="font-size: 11px; line-height: 1.8; margin: 20px 0;">
-            Dengan demikian, pernikahan antara <strong>[NAMA SUAMI]</strong> dengan <strong>[NAMA ISTRI]</strong> adalah sah menurut hukum agama Islam dan hukum Negara Republik Indonesia.
-        </p>
-
-        <p style="font-size: 10px; color: #666; font-style: italic; margin: 15px 0;">
-            Dokumen ini diberikan sebagai bukti otentik pencatatan pernikahan yang memiliki kekuatan hukum tetap.
-        </p>
-
-        <!-- Signature Section -->
-        <div class="center-seal">
-            <div class="seal-placeholder">CAP DINAS</div>
-            <div class="seal-date">Ditetapkan pada: [ISI HARI/TANGGAL/BULAN/TAHUN]</div>
-        </div>
-
-        <div class="signature-section">
-            <div class="signature-box">
-                <div class="signature-title">Wali Nikah</div>
-                <div class="signature-line"></div>
-                <div class="signature-name">[ISI NAMA]</div>
-                <div style="font-size: 9px; color: #666;">NIK: [ISI NIK]</div>
-            </div>
-
-            <div class="signature-box">
-                <div class="signature-title">Penghulu/Pejabat KUA</div>
-                <div class="signature-line"></div>
-                <div class="signature-name">[ISI NAMA]</div>
-                <div style="font-size: 9px; color: #666;">NIK: [ISI NIK]</div>
-            </div>
-
-            <div class="signature-box">
-                <div class="signature-title">Saksi I</div>
-                <div class="signature-line"></div>
-                <div class="signature-name">[ISI NAMA]</div>
-                <div style="font-size: 9px; color: #666;">NIK: [ISI NIK]</div>
-            </div>
-        </div>
-
-        <div class="signature-section" style="margin-top: 50px;">
-            <div style="grid-column: 2 / 3;">
-                <div class="signature-box">
-                    <div class="signature-title">Saksi II</div>
-                    <div class="signature-line"></div>
-                    <div class="signature-name">[ISI NAMA]</div>
-                    <div style="font-size: 9px; color: #666;">NIK: [ISI NIK]</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- QR Code -->
-        <div class="qr-code">
-            QR CODE
-        </div>
+      </div>
+      <div class="logo-container">
+        <img src="https://i.ibb.co/KjyDDGss/IMG-20251209-070009.jpg" alt="Logo DJBC">
+      </div>
     </div>
 
-    <script>
-        // Untuk mencetak dokumen
-        function printDocument() {
-            window.print();
-        }
+    <!-- JUDUL -->
+    <div class="title-section">
+      <div class="title-main">BERITA ACARA PENETAPAN JAMINAN LEGALITAS SEMENTARA</div>
+      <div class="title-sub">NOMOR: BA-JLS/BC.MKS/001776552523/2026</div>
+    </div>
 
-        // Shortcut Ctrl+P untuk print
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
-                e.preventDefault();
-                printDocument();
-            }
-        });
+    <!-- PEMBUKA -->
+    <div class="opening-paragraph">
+      Pada hari ini, <strong>Selasa</strong> tanggal <strong>Tujuh</strong> bulan <strong>April</strong> tahun <strong>Dua Ribu Dua Puluh Enam</strong> (07-04-2026), bertempat di Kantor Pengawasan dan Pelayanan Bea dan Cukai (KPPBC) Tipe Madya Pabean B Makassar, berdasarkan hasil pemeriksaan dan verifikasi barang kiriman melalui jasa ekspedisi, telah diterbitkan ketetapan ini yang ditujukan kepada:
+    </div>
 
-        // Tombol print jika ingin menambahkan
-        console.log('Template Akta Nikah Resmi Profesional siap digunakan.');
-        console.log('Tekan Ctrl+P atau Cmd+P untuk mencetak dokumen.');
-    </script>
+    <table class="recipient-table">
+      <tr>
+        <td>Nama Penerima</td>
+        <td>:</td>
+        <td><strong>Para Daeng</strong></td>
+      </tr>
+      <tr>
+        <td>Nomor Kontak</td>
+        <td>:</td>
+        <td>(+62) 821-3288-6535</td>
+      </tr>
+      <tr>
+        <td>Alamat Tujuan</td>
+        <td>:</td>
+        <td>Perumahan BTN Lamalaka, Kel. Lamalaka, Kec. Bantaeng, Kab. Bantaeng, Sulawesi Selatan 92412.</td>
+      </tr>
+    </table>
+
+    <div class="opening-paragraph">
+      Bahwa terhadap paket kiriman dengan status <strong>NON COD (Telah Lunas)</strong> yang ditujukan kepada alamat tersebut di atas, ditemukan pelanggaran administrasi kepabeanan dan cukai berupa peredaran Barang Kena Cukai (BKC) tanpa dilekati pita cukai yang sah.
+    </div>
+
+    <!-- BAGIAN 1: DATA BARANG -->
+    <div class="section-title">A. RINCIAN BARANG TEMUAN</div>
+    <table class="data-table">
+      <tbody>
+        <tr>
+          <th>Jasa Ekspedisi</th>
+          <td>
+            <img src="https://iili.io/fSgYSDP.md.jpg" alt="SiCepat" style="height:18px; vertical-align:middle; margin-right:8px;">
+            <strong>SiCepat Express</strong>
+          </td>
+        </tr>
+        <tr>
+          <th>Nomor Resi / AWB</th>
+          <td><strong>001776552523</strong></td>
+        </tr>
+        <tr>
+          <th>Kategori Barang</th>
+          <td>Barang Kena Cukai Hasil Tembakau (Rokok) - Tanpa Pita Cukai Resmi</td>
+        </tr>
+        <tr>
+          <th>Kuantitas Barang</th>
+          <td><strong>5 (lima) Slop = 1.000 (seribu) Batang</strong></td>
+        </tr>
+        <tr>
+          <th>Status Kepemilikan</th>
+          <td>Telah dibayar lunas oleh penerima (NON COD) - Tanggung jawab penerima penuh.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- BAGIAN 2: PERHITUNGAN -->
+    <div class="section-title">B. PENETAPAN JAMINAN LEGALITAS SEMENTARA</div>
+    <div class="opening-paragraph">
+      Sesuai dengan ketentuan Peraturan Menteri Keuangan Nomor 146/PMK.04/2023, atas barang temuan tersebut diwajibkan untuk menyetorkan Jaminan Legalitas Sementara untuk proses verifikasi dan pemasangan pita cukai pengganti dengan rincian sebagai berikut:
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="text-align: center; width: 65%;">Uraian Penetapan</th>
+          <th style="text-align: center; width: 35%;">Nilai (Rupiah)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <img src="https://iili.io/fSg74a4.md.jpg" alt="Legalisasi" style="height: 40px;">
+              <div>
+                <strong>Perhitungan Nilai Cukai Dasar</strong><br>
+                <small><em>(1 × Rp 1.000,00 × 1.000 batang)</em></small>
+              </div>
+            </div>
+          </td>
+          <td class="numeric">1.000.000,00</td>
+        </tr>
+        <tr class="highlight-row">
+          <td style="text-align: right;"><strong>TOTAL JAMINAN YANG HARUS DISETOR:</strong></td>
+          <td class="numeric"><strong>Rp 1.000.000,00</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- BAGIAN 3: REFUND & ADMIN -->
+    <div class="section-title">C. RINCIAN PENGEMBALIAN (RESTITUSI) JAMINAN</div>
+    <div class="note-box">
+      Berdasarkan Pasal 32 PMK 146/2023, Jaminan Legalitas Sementara ini bersifat <em>refundable</em> (dapat dikembalikan) setelah proses legalisasi selesai dalam estimasi waktu <strong>10–15 Menit</strong> sejak dana masuk ke sistem.
+    </div>
+    <table class="data-table">
+      <tbody>
+        <tr>
+          <th>Dana Dikembalikan (Restitusi 80%)<br><small><em>(80% × Rp 1.000.000,00)</em></small></th>
+          <td class="numeric"><strong>Rp 800.000,00</strong></td>
+        </tr>
+        <tr>
+          <th>Biaya Administrasi PNBP (20%)<br><small><em>(20% × Rp 1.000.000,00)</em></small></th>
+          <td class="numeric">Rp 200.000,00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- BAGIAN 4: INSTRUKSI PEMBAYARAN -->
+    <div class="section-title">D. INSTRUKSI PEMBAYARAN & PENYELESAIAN</div>
+    <div class="qr-container">
+      <div class="qr-text">SCAN QR CODE INI UNTUK PENYETORAN<br>JAMINAN LEGALITAS SEMENTARA</div>
+      <img src="https://iili.io/fSg9eff.png" alt="QR Code Pembayaran" />
+      <div class="qr-text" style="color: var(--bc-blue); font-size: 16px;">
+        TOTAL TAGIHAN: Rp 1.000.000
+      </div>
+      <p style="text-align: center; margin-top: 12px; font-size: 13px; color: var(--gray-700); line-height: 1.4;">
+        Gunakan aplikasi M-Banking atau E-Wallet (GoPay, OVO, DANA, LinkAja dll) yang mendukung QRIS untuk melakukan pembayaran.
+      </p>
+    </div>
+
+    <!-- KONSEKUENSI -->
+    <div class="consequence-box">
+      <strong>PERINGATAN HUKUM & KONSEKUENSI</strong>
+      Penyelesaian Jaminan Legalitas Sementara ini wajib diselesaikan dalam batas waktu <strong>1 x 24 Jam</strong>. Apabila melewati batas waktu tersebut tanpa penyelesaian, maka terhadap paket dan penerima paket akan dilakukan:
+      <ul>
+        <li>Penyitaan Barang Bukti oleh Tim Penindakan Direktorat Jenderal Bea dan Cukai.</li>
+        <li>Penjemputan paksa ke alamat tujuan sesuai kewenangan Undang-Undang Nomor 39 Tahun 2007 tentang Cukai.</li>
+        <li>Proses penyelidikan pidana terkait peredaran barang kena cukai ilegal (Pasal 54 dan 56 UU Cukai).</li>
+      </ul>
+    </div>
+
+    <div class="opening-paragraph">
+      Demikian Berita Acara ini diterbitkan secara elektronik dan sah menurut Peraturan perundang-undangan yang berlaku untuk dapat dipergunakan sebagaimana mestinya.
+    </div>
+
+    <!-- TANDA TANGAN -->
+    <div class="signature-wrapper">
+      <div class="signature-block">
+        <p>Ditetapkan di : Makassar</p>
+        <p>Pada tanggal : 7 April 2026</p>
+        <p style="margin-top: 8px;"><strong>KEPALA KANTOR,</strong></p>
+        
+        <div class="signature-img">
+          <!-- Gambar Tanda Tangan dan Stempel Terbaru -->
+          <img src="https://i.ibb.co.com/5XVJ04w0/1775564473755.jpg" alt="Tanda Tangan dan Stempel" class="combined-sign-stamp" />
+        </div>
+        
+        <p class="nama-pejabat">DR. AGUS SULISTYO, S.H., M.H.</p>
+        <p>NIP. 19780322 200312 1 002</p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <div>
+        Dokumen ini diterbitkan oleh Direktorat Jenderal Bea dan Cukai.<br>
+        Sah dan berkekuatan hukum sesuai UU ITE No. 11 Tahun 2008.
+      </div>
+      <img src="https://i.ibb.co/60BnDBVx/1766129105877.jpg" alt="ISO 9001" class="iso-badge" />
+    </div>
+
+  </div>
+
+  <script>
+    function downloadPDF() {
+      window.print();
+    }
+  </script>
 </body>
 </html>
